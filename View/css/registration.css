@@ -1,0 +1,17 @@
+@import url(all.css);
+
+.header_text {
+    text-align: center;
+}
+
+.form {
+    margin-left: 43%;
+    margin-top: 15%;
+    display: block;
+}
+
+[type="email"], [type="password"], [type="text"] {
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
