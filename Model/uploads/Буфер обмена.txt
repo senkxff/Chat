@@ -1,0 +1,18 @@
+ <Grid Background="Transparent">
+     <Border MinWidth="400" HorizontalAlignment="Left" Background="White" VerticalAlignment="Top" Padding="40" MaxWidth="550" CornerRadius="20" Height="326" Width="492" Margin="377,156,0,0">
+         <Border.Effect>
+             <DropShadowEffect BlurRadius="7" Color="DarkGray" ShadowDepth="0" />
+         </Border.Effect>
+
+         <Grid>
+             <TextBlock TextWrapping="Wrap" Text="Выбирите действие" FontSize="30" FontWeight="Bold" Margin="56,-30,56,233"/>
+
+             <Button Name="showInReadlTimeButton" Content="Показать работу в настоящем времени" Margin="0,97,0,117" Click="ShowInRealTimeButton_Click"></Button>
+             <Button Name="createFileButton" Content="Сохранить отчет в файл" Margin="0,137,0,77"></Button>
+             <Button Name="createDiagramButton" Content="Сделать отчёт в виде диаграмм" Margin="0,177,0,37"></Button>
+         </Grid>
+
+
+     </Border>
+     <Image x:Name="exitButton" HorizontalAlignment="Left" Height="23" Margin="823,179,0,0" VerticalAlignment="Top" Width="22" Source="/ExitButton.png" MouseDown="exitButton_MouseDown"/>
+ </Grid>

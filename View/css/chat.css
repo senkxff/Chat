@@ -1,0 +1,41 @@
+@import url(general.css);
+
+textarea {
+    position: absolute;
+    top: 1%;
+    left: 53%;
+    width: 30%;
+    height: 25%;
+}
+
+.buttons {
+    display: flex;
+}
+
+.send_button {
+    margin-left: 76%;
+    margin-top: 15%;
+}
+
+.choose_button {
+    margin-left: -30.5%;
+    margin-top: 15%;
+}
+
+table {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    width: 50%;
+
+}
+
+th {
+    font-weight: bold;
+}
+
+select {
+    position: absolute;
+    top: 1%;
+    left: 85%;
+}

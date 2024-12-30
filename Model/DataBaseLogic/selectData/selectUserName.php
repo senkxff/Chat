@@ -1,5 +1,5 @@
-<?php require_once "createConnection.php";
-class SelectName
+<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/Model/DataBaseLogic/createConnection.php";
+class SelectUserName
 {
     private $connection;
     public function __construct()
@@ -16,14 +16,14 @@ class SelectName
             $result = mysqli_stmt_get_result($stmt);
 
             if ($row = mysqli_fetch_assoc($result)) {
-                $hashed_password = $row['name'];
+                $userName = $row['name']; $_SESSION["user_name"] = $userName;
                 mysqli_close($this->connection);
             } else {
-                $hashed_password = "";
+                $userName = "Вы не вошли в аккаунт!";
                 mysqli_close($this->connection);
             }
             mysqli_stmt_close($stmt);
-            return $hashed_password;
+            return $userName;
         } else {
             die ("Ошибка подключения к базе данных: запрос не выполнен!");
         }

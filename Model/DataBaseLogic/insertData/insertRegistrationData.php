@@ -1,4 +1,4 @@
-<?php require_once "createConnection.php";
+<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/Model/DataBaseLogic/createConnection.php";
 class InsertRegistrationData
 {
     private $connection;
@@ -6,7 +6,7 @@ class InsertRegistrationData
     {
          $this->connection = createConnection();
     }
-    public function InsertData($email, $userName, $hashed_password, $browser, $ip) : void
+    public function insertData($email, $userName, $hashed_password, $browser, $ip) : void
     {
         if ($this->connection) {
             $query = "INSERT INTO `users_information` (`email`, `name`, `hashed_password`, `browser`, `ip`) VALUES (?, ?, ?, ?, ?)";

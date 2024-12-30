@@ -1,0 +1,4 @@
+xxzare4w_bd - бд
+$0509Arcsin - пароль
+ip_bitrix - 192.168.100.12
+root
