@@ -42,6 +42,7 @@
             </div>
         </form>
         <form method="get">
+            <input type="hidden" name="page" value="<?= isset($_GET['page']) ? $_GET['page'] : 1; ?>">
             <select name="selected_option" onchange="this.form.submit()">
                 <option disabled selected>Способы сортировки</option>
                 <option disabled>По дате:</option>
@@ -56,5 +57,10 @@
             </select>
         </form>
     </main>
+    <footer>
+        <div class="pagenavi">
+            <?php require_once "../../Controller/pageNavigationLogic.php";?>
+        </div>
+    </footer>
 </body>
 </html>

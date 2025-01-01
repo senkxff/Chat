@@ -41,13 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["send_button"])) {
 
         $insertMessageData = new InsertMessageData();
         $insertMessageData->insertMessage($senderName, $message, $email, $filePath);
-        header("Location: ../View/pages/chat.php");
+        header("Location: ../View/pages/chat.php?page=" . (isset($_SESSION['current_page']) ? $_SESSION['current_page'] : 1));
 
     } else {
         $insertMessageData = new InsertMessageData();
         $insertMessageData->insertMessage($senderName, $message, $email);
 
-        header("Location: ../View/pages/chat.php");
+        header("Location: ../View/pages/chat.php?page=" . (isset($_SESSION['current_page']) ? $_SESSION['current_page'] : 1));
+
     }
 
 } else {

@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["entrance_button"])) {
     if (password_verify($password, $hashed_password) && $userName == $name) {
         header("Location: ../View/pages/chat.php");
     } else {
-        header("Location: ../View/pages/chat.php");
         die("вам необхожимо зарегистрироваться");
     }
 }

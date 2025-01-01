@@ -31,24 +31,22 @@ if ($sortOrder == "T_ASC") {
     $selectMessageData = new SelectMessageDataN_DESC();
 }
 
-$result = $selectMessageData->selectMessage();
+$messages = $selectMessageData->selectMessage();
 
-if (!empty($result) && $result->num_rows > 0) {
-    while ($message = $result->fetch_assoc()) { ?>
-        <tr>
-            <?php
-            echo "<td>" . htmlspecialchars($message["sender_name"] ?? "") . "</td>";
-            echo "<td>" . htmlspecialchars($message["email"] ?? "") . "</td>";
-            echo "<td>" . htmlspecialchars($message["message"] ?? "") . "</td>";
+foreach ($messages as $message) { ?>
+    <tr>
+        <?php
+        echo "<td>" . htmlspecialchars($message["sender_name"] ?? "") . "</td>";
+        echo "<td>" . htmlspecialchars($message["email"] ?? "") . "</td>";
+        echo "<td>" . htmlspecialchars($message["message"] ?? "") . "</td>";
 
-            if (!empty($message["file"])) {
-                echo "<td><a href='/Model/uploads/" . htmlspecialchars($message["file"]) . "'>открыть файл</a></td>";
-            } else {
-                echo "<td>-отсутствует-</td>";
-            }
+        if (!empty($message["file"])) {
+            echo "<td><a href='/Model/uploads/" . htmlspecialchars($message["file"]) . "'>открыть файл</a></td>";
+        } else {
+            echo "<td>-отсутствует-</td>";
+        }
 
-            echo "<td>" . htmlspecialchars($message["date"]) . "</td>";
-            ?>
-        </tr>
-    <?php }
-}
+        echo "<td>" . htmlspecialchars($message["date"]) . "</td>";
+        ?>
+    </tr>
+<?php }

@@ -39,3 +39,15 @@ select {
     top: 1%;
     left: 85%;
 }
+
+.pagenavi {
+    font-size: 25px;
+    position: absolute;
+    left: 52%;
+    margin-top: 10px;
+}
+
+.pagenavi a {
+    padding-left: 10px;
+    color: black;
+}
