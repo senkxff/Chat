@@ -1,0 +1,13 @@
+Запущенные приложения — Затраченное время
+Microsoft Text Input Application — 00:58
+Sticky Notes — 00:58
+Визуальный редактор — Яндекс Браузер — 00:58
+VMBitrix9.0-3-CentOSStream9-VirtualBox [Running] - Oracle VirtualBox — 00:58
+Oracle VirtualBox Manager — 00:58
+Weather — 00:58
+Title — 00:58
+Settings — 00:58
+TimeTracker - Microsoft Visual Studio — 00:58
+TimeTracker — 00:00
+mainFuctions — 00:01
+Новая вкладка - Google Chrome — 00:09

@@ -41,7 +41,7 @@ foreach ($messages as $message) { ?>
         echo "<td>" . htmlspecialchars($message["message"] ?? "") . "</td>";
 
         if (!empty($message["file"])) {
-            echo "<td><a href='/Model/uploads/" . htmlspecialchars($message["file"]) . "'>открыть файл</a></td>";
+            echo "<td><a href='/uploads/" . htmlspecialchars($message["file"]) . "'>открыть файл</a></td>";
         } else {
             echo "<td>-отсутствует-</td>";
         }

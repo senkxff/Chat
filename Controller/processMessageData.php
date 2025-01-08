@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+error_reporting(E_ALL); // Отображение всех типов ошибок
+ini_set('display_errors', '1'); // Включение отображения ошибок
+ini_set('display_startup_errors', '1'); // Включение ошибок, возникающих при запуске
+
 require_once "../Model/DataBaseLogic/insertData/insertMessageData.php";
 require_once "../Model/DataBaseLogic/selectData/selectUserName.php";
 
@@ -11,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["send_button"])) {
 
     $message = htmlspecialchars($_POST["message"]);
 
-    if ($_FILES["choose_button"]  && $_FILES["choose_button"]["error"] == 0) {
-        $filePath = null;
+    if ($_FILES["choose_button"]  && $_FILES["choose_button"]["error"] == UPLOAD_ERR_OK) {
+        $filePath = "../uploads/";
         $fileTmpPath = $_FILES["choose_button"]["tmp_name"];
         $fileName = $_FILES["choose_button"]["name"];
         $fileSize = $_FILES["choose_button"]["size"];
@@ -34,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["send_button"])) {
             if ($fileSize > 100 * 1024) {
                 die("Ошибка размера файла: текстовый файл слишком большой");
             } else {
-                $filePath = "../uploads/" . basename($fileName);
+                $filePath = "../Model/uploads/" . basename($fileName);
                 move_uploaded_file($fileTmpPath, $filePath);
             }
         }
